@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar Eclipse Loader</title>
+    <style>
+      body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .eclipse-loader {
+        position: relative;
+        width: 100px;
+        height: 100px;
+      }
+      .core {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border-radius: 50%;
+        border: 4px solid rgba(99, 102, 241, 0.2);
+        border-top-color: #818cf8;
+        animation: rotate 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+      }
+      .glow {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+        animation: pulse-glow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes rotate {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes pulse-glow {
+        from {
+          opacity: 0.3;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: 1.1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="eclipse-loader">
+      <div class="glow"></div>
+      <div class="core"></div>
+    </div>
+  </body>
+</html>

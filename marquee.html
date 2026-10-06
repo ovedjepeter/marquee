@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Continuous Banner Marquee</title>
+    <style>
+      body {
+        background-color: #0f172a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family:
+          system ui,
+          sans-serif;
+        overflow: hidden;
+      }
+
+      .marquee-container {
+        width: 100%;
+        max-width: 700px;
+        overflow: hidden;
+        background: #1e293b;
+        border: 1px solid #334155;
+        padding: 20px 0;
+        border-radius: 14px;
+        display: flex;
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 15%,
+          #000 85%,
+          transparent
+        );
+      }
+      .marquee-track {
+        display: flex;
+        gap: 30px;
+        white-space: nowrap;
+        animation: scroll 12s linear infinite;
+      }
+
+      .tag {
+        background: #334155;
+        color: #f8fafc;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <!-- first copy -->
+        <span class="tag">🎧 Dolby Atmos</span>
+        <span class="tag">⚡ HTML5 Audio</span>
+        <span class="tag">🎨 TailwindCSS</span>
+        <span class="tag">🔊 Spatial Sound</span>
+        <span class="tag">🚀 Pure CSS3</span>
+        <!-- Duplicate -->
+        <span class="tag">🎧 Dolby Atmos</span>
+        <span class="tag">⚡ HTML5 Audio</span>
+        <span class="tag">🎨 TailwindCSS</span>
+        <span class="tag">🔊 Spatial Sound</span>
+        <span class="tag">🚀 Pure CSS3</span>
+      </div>
+    </div>
+  </body>
+</html>
