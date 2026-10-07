@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aminated Gradient Border</title>
+    <style>
+      @property --angle {
+        syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+      }
+
+      body {
+        background: #090d16;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .gradient-btn-wrapper {
+        position: relative;
+        padding: 3px;
+        border-radius: 12px;
+        background: conic-gradient(
+          from var(--angle),
+          #6366f1,
+          #a855f7,
+          #ec4899,
+          #6366f1
+        );
+        animation: spin 3s linear infinite;
+      }
+
+      .gradient-btn {
+        background: #0f172a;
+        color: #ffffff;
+        padding: 16px 26px;
+        border: none;
+        border-radius: 9px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        letter-spacing: 0.5px;
+        transition: background-color 0.3s;
+      }
+
+      .gradient-btn-wrapper:hover .gradient-btn {
+        background: #1e293b;
+      }
+
+      @keyframes spin {
+        from {
+          --angle: 0deg;
+        }
+
+        to {
+          --angle: 360deg;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gradient-btn-wrapper">
+      <button class="gradient-btn">Launch Studion</button>
+    </div>
+  </body>
+</html>
